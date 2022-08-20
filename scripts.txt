@@ -1,7 +1,4 @@
 # inside the server root folder
 docker build -t library-api .
-docker compose up -d
 
-export DB_HOST=127.0.0.1
-export DB_PASS=pass
-docker run -t -d -p 8000:80 -e DB_HOST -e DB_PASS --name libraryapi-docker deanrquinton/libraryapi-docker:main
+sudo docker run -t -d -p 8000:80 --name libraryapi-docker --env-file ./.env deanrquinton/libraryapi-docker:main
