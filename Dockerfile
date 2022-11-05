@@ -4,6 +4,12 @@ RUN mkdir -p /app
 
 WORKDIR /app
 
+RUN apt-get update -y \
+  && apt-get install -y --no-install-recommends ca-certificates \
+  && apt-get autoremove -y \
+  && apt-get clean -y \
+  && rm -rf /var/lib/apt/lists/*
+
 COPY package*.json ./
 
 RUN npm install
