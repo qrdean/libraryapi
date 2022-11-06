@@ -18,7 +18,7 @@ COPY . ./
 
 RUN npm run build
 
-ENV PORT=443
+ENV PORT=80
 ENV DB_HOST=127.0.0.1
 ENV DB_PORT=3306
 ENV DB_USER=qdean
